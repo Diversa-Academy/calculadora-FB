@@ -14,15 +14,29 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-53BW4V2L8E');
     </script>
 
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1444795467316285');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1444795467316285&ev=PageView&noscript=1"
+    /></noscript>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/a843049c-8fe9-4e97-b308-c505effb976d.png?auth_key=1869619462-362acf045d034ddbabfb96c68fb69623-0-aaf5b566afc2778365b2766f5097b68a">
-   
+    
     <title>Calculadora de Patrimônio Ideal | Diversa Academy</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -698,6 +712,16 @@
                         'event_category': 'calculadora',
                         'event_label': 'calculo_realizado'
                     });
+                    
+                    // Disparar evento de Lead também para o Facebook Pixel
+                    if(typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead', {
+                            content_name: 'Calculadora de Patrimonio',
+                            value: liq,
+                            currency: 'BRL'
+                        });
+                    }
+
                 } else {
                     showToast("Erro ao enviar relatório, mas cálculo realizado.", "error");
                 }
@@ -766,6 +790,3 @@
     </script>
 </body>
 </html>
-
-
-
